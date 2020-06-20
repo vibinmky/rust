@@ -1,0 +1,32 @@
+use std::mem;
+
+fn main() {
+    
+    // 8 bit unsigned
+    let a:u8 = 250;
+    println!("a is {} and is using {} bytes",a, mem::size_of_val(&a));
+    
+    //mut keyword is used for muttable variable declaration
+    let mut b= 1993821; //using 32 bit signed -> i32
+    println!("b is {} and is using {} bytes",b, mem::size_of_val(&b));
+    b=8;
+    println!("b is {} and is using {} bytes",b, mem::size_of_val(&b));
+    
+    //isize usize allocate defaule os memmory
+    let c:isize = 5;
+    let size_of_c = mem::size_of_val(&c);
+    println!("c is {} and is using {} bytes, {} bit os",c, size_of_c, 8* size_of_c);
+    
+    //charactor assignment
+    let d='D';  // default it uses 32 bits
+    println!("d is {} and is using {} bytes",d, mem::size_of_val(&d));
+    
+    let e:f32=2.5;  // default uses f64 -> 64 bits; if specified f32 uses 32 bits
+    println!("e is {} and is using {} bytes",e, mem::size_of_val(&e));
+    
+    
+    //boolean uses 8 bits
+    let f=true;
+    println!("f is {} and is using {} bytes",f, mem::size_of_val(&f));
+}
+
