@@ -28,5 +28,39 @@ fn main() {
     //boolean uses 8 bits
     let f=true;
     println!("f is {} and is using {} bytes",f, mem::size_of_val(&f));
+    
+    //operators
+    //Arithematic
+    let mut g = 5 + 2*4;    //basic opertions +-*/%
+    g = g+1;    // There is no -- or ++ operations
+    g -=4;      // -=  +=  *=  /=  %= can be used
+    println!("g is {} ", g);
+    
+    println!("Remainder of {} by {} is {}",g,3, (g%3));
+    
+    let g_cubed = i32::pow(g,3);    //i32 is the output type
+    println!("g cube is {}",g_cubed);
+    
+    let h = 2.5;
+    let h_cubed = f64::powi(h,3);
+    //  powi-> here i stands for integer is used to power ie) 3
+    let h_to_pi = f64::powf(h,std::f64::consts::PI);
+    //f -> float is used to power ie) pi
+    println!("h cube is {}, and h to PI is {}",h_cubed, h_to_pi);
+    
+    //bitwise operators
+    // | OR & AND ^ XOR !NOR
+    let i = 1 | 2;
+    println!(" 1 | 2 is {}",i);
+    let two_to_10 = 1 << 10;
+    println!("2 to 10 is {}",two_to_10);
+    
+    //logical operations
+    // < > <= >=  ==
+    let j = 2<3;     //true
+    println!("2 < 3 is {}",j);
+    let k = 5;
+    println!("Is k equal to five --> {}", k==5);  //true
+    
 }
 
