@@ -1,0 +1,23 @@
+fn main()
+{
+    let temp=10;
+    
+    // regular if statements
+    if temp > 30 {
+        println!("Hot");
+    }
+    else if temp < 10 {
+        println!("Cold");
+    }
+    else {
+        println!("Warm");
+    }
+    
+    // if statement assigned to a variable
+    let a = if temp >25 {"Hot"} else {"Cold"};
+    println!("{}",a);
+    
+    // if statement within a prinln macro
+    println!("Temperate is really {}", if temp >30 {"Hot"} else if temp >20 {"warm"} else {"cold"});
+}
+
