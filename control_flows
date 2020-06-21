@@ -1,0 +1,63 @@
+fn main()
+{
+    let temp=10;
+    
+    // regular if statements
+    if temp > 30 {
+        println!("Hot");
+    }
+    else if temp < 10 {
+        println!("Cold");
+    }
+    else {
+        println!("Warm");
+    }
+    
+    // if statement assigned to a variable
+    let a = if temp >25 {"Hot"} else {"Cold"};
+    println!("{}",a);
+    
+    // if statement within a prinln macro
+    println!("Temperate is really {}", if temp >30 {"Hot"} else if temp >20 {"warm"} else {"cold"});
+    
+    //while loop
+    let mut b= 2;
+    while b < 100 {
+        b *= 2;
+        if b==64 { continue; }    // to skip particular value
+        println!(" b is {}",b);
+    }
+    
+    // loop -> runs for infinite times virtually
+    let mut c=2;
+    loop {
+        c *=2;
+        if c == 1 << 8 { break; }   // exit the loop at particual condition
+        println!("c is {}",c);  // 1 << 9 means 2^9=512
+    }
+    
+    // for loops
+    for d in 1..11{     // 1 inculsive, 11 exclusive
+        println!("d is {}",d);
+    }
+    
+    // postion always start from 0 
+    for (pos,e) in (30..41).enumerate() {
+        println!("pos = {}, value = {} ",pos,e);
+    }
+    
+    
+    // match  pattern
+    let country_code= 101;
+    
+    let country = match country_code{
+        91  =>  "India",
+        7   =>  "Russia",
+        44  => "UK",
+        1..=100 => "unknown",   // = indicate 100 inclusive
+        _   => "Invalid"    //for un specified values
+    };
+    
+    println!("country with country code {} is {}",country_code, country);
+}
+
